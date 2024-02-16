@@ -183,7 +183,7 @@ int main()
 
 
 			case 'M':	//get maximum node
-				if(heap1 == NULL)
+				if(heap1 -> getSize() == 0)
 				{
 					cout << "\nEmpty heap, can NOT get max node" << endl;
 					break;
@@ -272,6 +272,10 @@ void heapSort(MaxHeap* oneMaxHeap)
         oneMaxHeap->heapify(0);
 
     }
+
+    //finally after this for loop we reduce the size of heap by 1 thus removing the cout of root
+    --n;
+    oneMaxHeap -> setSize(n);
 
     // Print the sorted array
     for (int i = 0; i < originalsize; i++)

@@ -1,7 +1,7 @@
 // Assignment: ASU CSE310 HW#3 Spring 2024
 // Your Name: Raje Patil
 // ASU ID: 1231031453
-// ASU Email address: rpatil46@asu.edu
+// ASU Email address:
 // Description: Header file for max heap that has all the functions for heapsort and priority queue functions.
 //				a newly added function apart from the structure was setSize that alters the size of the array while
 //				heapifying to implement a heapsort.
@@ -67,7 +67,7 @@ MaxHeap::MaxHeap(int capacity)
 MaxHeap::~MaxHeap()
 {
 	delete[] carArr;
-	cout << "\nThe number of deleted cars is: " << size << endl;
+	cout << "The number of deleted cars is: " << size;
 }
 
 
@@ -184,7 +184,6 @@ bool MaxHeap::heapInsert(int vin, string model, string make, double price)
 	// "Float" the new Car object up to maintain the max-heap property
 	bool flag = heapIncreaseVIN(size-1, newCar);
 	//when the new car is inserted, delete the dummy car
-
 	return flag;
 }
 
@@ -265,7 +264,7 @@ void MaxHeap::printHeap()
 {
 	if(MaxHeap::size==0)
 	{
-		cout << "Empty heap, no elements";
+		cout << "\nEmpty heap, no elements" << endl;
 	}
 
 	else
