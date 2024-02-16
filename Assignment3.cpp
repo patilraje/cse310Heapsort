@@ -185,7 +185,7 @@ int main()
 			case 'M':	//get maximum node
 				if(heap1 -> getSize() == 0)
 				{
-					cout << "\nEmpty heap, can NOT get max node" << endl;
+					cout << "Empty heap, can NOT get max node" << endl;
 					break;
 				}
 

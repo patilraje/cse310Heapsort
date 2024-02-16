@@ -67,7 +67,7 @@ MaxHeap::MaxHeap(int capacity)
 MaxHeap::~MaxHeap()
 {
 	delete[] carArr;
-	cout << "The number of deleted cars is: " << size;
+	cout << "\nThe number of deleted cars is: " << size << endl;
 }
 
 
