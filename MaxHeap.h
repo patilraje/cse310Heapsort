@@ -1,7 +1,7 @@
 // Assignment: ASU CSE310 HW#3 Spring 2024
 // Your Name: Raje Patil
 // ASU ID: 1231031453
-// ASU Email address:
+// ASU Email address: rpatil46@asu.edu
 // Description: Header file for max heap that has all the functions for heapsort and priority queue functions.
 //				a newly added function apart from the structure was setSize that alters the size of the array while
 //				heapifying to implement a heapsort.
@@ -34,7 +34,7 @@ public:
 
 	Car* getCarArr();
 	int getSize();
-	void setSize(int newSize);
+	void setSize(int newSize);  //new addition
 	int getCapacity();
 	int isFound(int aVin);
 	bool heapIncreaseVIN(int index, Car oneCarWithNewVIN);
@@ -78,25 +78,26 @@ Car* MaxHeap::getCarArr()
 }
 
 
-
+//return current size of the heap
 int MaxHeap::getSize()
 {
 	return size;
 }
 
-
+//to reset the size of heap if required (for heapsort)
 void MaxHeap::setSize(int newSize)
 {
 	this -> size = newSize;
 }
 
-
+//get the dynamic array container capacity
 int MaxHeap::getCapacity()
 {
 	return capacity;
 }
 
 
+//if the car with the vin exists return its index
 int MaxHeap::isFound(int aVin)
 {
 	for(int i=0; i<size; i++)
@@ -136,7 +137,7 @@ bool MaxHeap::heapIncreaseVIN(int index, Car oneCarWithNewVIN)
 }
 
 
-
+//insert new car in heap
 bool MaxHeap::heapInsert(int vin, string model, string make, double price)
 {
 	//check if the heap is at capacity & double it if required
@@ -212,14 +213,14 @@ void MaxHeap::heapify(int index)
 	}
 }
 
-
+//return root which has the max vin
 Car MaxHeap::getHeapMax()
 {
 	return carArr[0];
 }
 
 
-
+//remove the root which is the max vin
 void MaxHeap::extractHeapMax()
 {
     if (size < 1)

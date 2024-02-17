@@ -5,7 +5,6 @@
 // Description: This program displays a menu of choices to a user
 //              and performs the chosen task. It will keep asking a user to
 //              enter the next choice until the choice of 'Q' (Quit) is entered.
-//             	//---- is where you should add your own code
 //********************************************************************************
 
 #include "MaxHeap.h"
@@ -64,15 +63,15 @@ int main()
 
 
 			case 'E':	//Extract the maximum node
-                if (heap1 == NULL)
+                if (heap1 == NULL) //the heap is empty so the max can't be extracted
                     cout << "\nEmpty heap, can NOT extract max" << endl;
                 else
                 {
                     cout << "\nBefore extract heap max operation:" << endl;
-					heap1->printHeap();
-					heap1->extractHeapMax();
+					heap1->printHeap();  //print to show before of the heap
+					heap1->extractHeapMax(); //remove the max
 					cout << "\nAfter extract heap max operation:" << endl;
-					heap1->printHeap();
+					heap1->printHeap();  //print after the max extraction
                 }
 				break;
 
@@ -83,13 +82,13 @@ int main()
 				cin.ignore(20, '\n');	//flush the buffer
 				index = heap1->isFound(vin);
 
-				if(index != -1)
+				if(index != -1) // if it returns 0 or a positive integer as index it exists
 				{
 					cout << "\nCar with VIN: " << vin << " is found" << endl;
 					break;
 				}
 
-				else
+				else //if it doesn't return an actual index that means it doesn't exist
 				{
 					cout << "\nCar with VIN: " << vin << " is NOT found" << endl;
 					break;
@@ -119,7 +118,7 @@ int main()
 					break;
 				}
 
-				success = heap1 -> heapInsert(vin, model, make, price);
+				success = heap1 -> heapInsert(vin, model, make, price); //call header functions
 
 				if(success == true)
 				{
@@ -134,7 +133,7 @@ int main()
 				break;
 
 
-			//INCOMPLETE
+			//to increase the vin of an existing car
 			case 'K':	//increase the vin
 				cout << "\nEnter the old car VIN you want to increase: ";
 				cin >> vin;
